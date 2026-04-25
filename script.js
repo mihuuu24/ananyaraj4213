@@ -44,14 +44,14 @@ $(document).ready(function(){
     // TYPING ANIMATION
     // ================================
     var typed = new Typed(".typing", {
-        strings: ["Product Designer", "UI/UX Designer"],
+        strings: ["Product Designer", "Product Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed2 = new Typed(".typing-2", {
-        strings: ["Product Designer", "UI/UX Designer"],
+        strings: ["Product Designer", "Product Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
