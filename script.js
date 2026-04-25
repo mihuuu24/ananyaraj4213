@@ -1,73 +1,105 @@
 $(document).ready(function(){
+
+    // ================================
+    // STICKY NAVBAR + SCROLL UP BUTTON
+    // ================================
     $(window).scroll(function(){
-        // sticky navbar on scroll script
         if(this.scrollY > 20){
             $('.navbar').addClass("sticky");
-        }else{
+        } else {
             $('.navbar').removeClass("sticky");
         }
-        
-        // scroll-up button show/hide script
+
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
-        }else{
+        } else {
             $('.scroll-up-btn').removeClass("show");
         }
     });
 
-    // slide-up script
+    // ================================
+    // SCROLL UP BUTTON CLICK
+    // ================================
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
         $('html').css("scrollBehavior", "auto");
     });
 
+    // ================================
+    // SMOOTH SCROLL ON MENU CLICK
+    // ================================
     $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
     });
 
-    // toggle menu/navbar script
+    // ================================
+    // TOGGLE MOBILE MENU
+    // ================================
     $('.menu-btn').click(function(){
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
 
-    // typing text animation script
+    // ================================
+    // TYPING ANIMATION
+    // ================================
     var typed = new Typed(".typing", {
-        strings: ["Product Designer", "Product Designer"],
+        strings: ["Product Designer", "UI/UX Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    var typed = new Typed(".typing-2", {
-        strings: ["Product Designer","Product Designer"],
+    var typed2 = new Typed(".typing-2", {
+        strings: ["Product Designer", "UI/UX Designer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    // owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
+    // ================================
+    // OWL CAROUSEL - FIXED
+    // ================================
+    var owl = $('.carousel').owlCarousel({
+        margin: 15,
         loop: true,
         autoplay: true,
-        autoplayTimeOut: 2000,
+        autoplayTimeout: 2500,       // ✅ fix: "TimeOut" → "Timeout"
         autoplayHoverPause: true,
+        smartSpeed: 700,             // ✅ smooth scroll animation
+        dots: true,
+        nav: true,                   // ✅ arrow buttons enable
+        navText: [
+            '<i class="fas fa-chevron-left"></i>',
+            '<i class="fas fa-chevron-right"></i>'
+        ],
         responsive: {
-            0:{
+            0: {
                 items: 1,
-                nav: false
+                nav: false,
+                dots: true
             },
-            600:{
+            600: {
                 items: 2,
-                nav: false
+                nav: true,
+                dots: true
             },
-            1000:{
-                items: 6,
-                nav: false
+            1000: {
+                items: 3,            // ✅ fix: 6 → 3
+                nav: true,
+                dots: true
             }
         }
     });
+
+    // ================================
+    // CUSTOM PREV / NEXT (optional)
+    // ================================
+    $('.proj-prev').click(function(){
+        owl.trigger('prev.owl.carousel');
+    });
+    $('.proj-next').click(function(){
+        owl.trigger('next.owl.carousel');
+    });
+
 });
