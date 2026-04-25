@@ -1,4 +1,3 @@
-/*  import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 *{
@@ -10,23 +9,18 @@
 html{
     scroll-behavior: smooth;
 }
-
-/* custom scroll bar */
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width: 10px;
 }
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
     background: #f1f1f1;
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
     background: #888;
 }
-
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover{
     background: #555;
 }
-
-/* all similar content styling codes */
 section{
     padding: 100px 0;
 }
@@ -76,8 +70,6 @@ section .title::after{
     background: #fff;
     transform: translateX(-50%);
 }
-
-/* navbar styling */
 .navbar{
     position: fixed;
     width: 100%;
@@ -125,8 +117,6 @@ section .title::after{
 .navbar.sticky .menu li a:hover{
     color: #fff;
 }
-
-/* menu btn styling */
 .menu-btn{
     color: #fff;
     font-size: 23px;
@@ -160,9 +150,6 @@ section .title::after{
 .scroll-up-btn:hover{
     filter: brightness(90%);
 }
-
-
-/* home section styling */
 .home{
     display: flex;
     background: url("1 (1).avif") no-repeat center;
@@ -175,16 +162,16 @@ section .title::after{
     animation-name: change;
     animation-duration: 20s;
     animation-iteration-count: infinite;
-    animation-fill-mode:both;
+    animation-fill-mode: both;
     animation-delay: 3s;
-    animation-direction:normal;
+    animation-direction: normal;
 }
 .home .max-width{
-  width: 100%;
-  display: flex;
+    width: 100%;
+    display: flex;
 }
 .home .max-width .row{
-  margin-right: 0;
+    margin-right: 0;
 }
 .home .home-content .text-1{
     font-size: 27px;
@@ -218,8 +205,6 @@ section .title::after{
     color: crimson;
     background: none;
 }
-
-/* about section styling */
 .about .title::after{
     content: "who i am";
 }
@@ -262,18 +247,15 @@ section .title::after{
     color: crimson;
     background: none;
 }
-
-/* services section styling */
 .services, .projects{
-    color:#fff;
+    color: #fff;
     background: #111;
 }
 .services .title::before,
 .projects .title::before{
     background: #fff;
 }
-.services .title::after,
-.projects .title::after{
+.services .title::after{
     background: #111;
     content: "what i learned";
 }
@@ -304,15 +286,11 @@ section .title::after{
     color: #fff;
 }
 .services .serv-content .card .text{
-
     color: #fff;
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
 }
-
-/* skills section styling */
-
 .skills .title::after{
     content: "what i know";
 }
@@ -370,54 +348,56 @@ section .title::after{
     top: 0;
     background: crimson;
 }
-.skills-content .right .html::before{
-    width: 90%;
-}
-.skills-content .right .css::before{
-    width: 60%;
-}
-.skills-content .right .js::before{
-    width: 80%;
-}
-.skills-content .right .php::before{
-    width: 90%;
-}
-.skills-content .right .mysql::before{
-    width: 70%;
-}
+.skills-content .right .html::before{ width: 90%; }
+.skills-content .right .css::before{ width: 60%; }
+.skills-content .right .js::before{ width: 80%; }
+.skills-content .right .php::before{ width: 90%; }
+.skills-content .right .mysql::before{ width: 70%; }
 
-/* projects section styling */
-/* FIXED TITLE + SUBTITLE */
-.projects .title {
+/* PROJECTS */
+.projects{
     position: relative;
-    margin-bottom: 70px;   /* prevents overlap */
+    z-index: 1;
 }
-
+.projects .title{
+    position: relative;
+    margin-bottom: 80px;
+}
+.projects .title::before{
+    background: #fff;
+}
 .projects .title::after{
     content: "what i have done";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: -28px;
-    font-size: 22px;
+    font-size: 17px;
     color: crimson;
     font-weight: 600;
+    background: #111;
+    padding: 0 8px;
+    white-space: nowrap;
 }
-
-/* PROJECT CARDS */
+.projects .carousel{
+    position: relative;
+    padding: 0 40px;
+}
 .projects .carousel .card{
     background: #222;
-    border-radius: 6px;
-    padding: 25px 35px;
+    border-radius: 10px;
+    padding: 20px 12px;
     text-align: center;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin: 5px 8px 20px 8px;
+    cursor: pointer;
 }
-
 .projects .carousel .card:hover{
     background: crimson;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(220,20,60,0.35);
 }
-
 .projects .carousel .card .box{
     display: flex;
     flex-direction: column;
@@ -425,75 +405,121 @@ section .title::after{
     justify-content: center;
     transition: all 0.3s ease;
 }
-
 .projects .carousel .card:hover .box{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
-
-.projects .carousel .card .text {
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
-}
-
-
-/* IMAGE STYLES */
 .projects .carousel .card img{
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid crimson;
+    border: 4px solid crimson;
     transition: all 0.3s ease;
 }
 .projects .carousel .card:hover img{
     border-color: #fff;
 }
-
-/* CLICK HERE BUTTON */
-.btn {
+.projects .carousel .card p{
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+    margin: 12px 0 6px 0;
+    line-height: 1.4;
+}
+.btn{
     display: inline-block;
-    margin-top: 12px;
-    padding: 10px 18px;
-    font-size: 14px;
-    color: #fff;               /* white text */
-    background-color: crimson; /* red box */
+    margin-top: 8px;
+    padding: 7px 16px;
+    font-size: 12px;
+    color: #fff;
+    background-color: crimson;
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
-    transition: 0.3s ease-in-out;
-}
-
-.btn:hover {
-    background-color: transparent;
     border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+.projects .carousel .card:hover .btn{
+    background-color: #fff;
     color: crimson;
+    border-color: #fff;
 }
 
-/* OWL CAROUSEL DOTS */
+/* OWL NAV */
+.owl-carousel{
+    z-index: 1 !important;
+}
+.owl-nav{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-60%);
+    pointer-events: none;
+    z-index: 10;
+}
+.owl-nav button{
+    pointer-events: all;
+    width: 38px;
+    height: 38px;
+    border-radius: 50% !important;
+    background: crimson !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(220,20,60,0.5);
+}
+.owl-nav button:hover{
+    background: #a00000 !important;
+    transform: scale(1.15);
+}
+.owl-nav button span{
+    font-size: 22px;
+    line-height: 1;
+    margin-top: -2px;
+}
+
+/* OWL DOTS */
 .owl-dots{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .owl-dot{
     height: 13px;
     width: 13px;
     margin: 0 5px;
-    outline: none!important;
+    outline: none !important;
     border-radius: 50%;
-    border: 2px solid crimson!important;
+    border: 2px solid crimson !important;
     transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    background: transparent;
 }
 .owl-dot.active{
     width: 35px;
     border-radius: 14px;
+    background: crimson !important;
 }
-.owl-dot.active,
 .owl-dot:hover{
-    background: crimson!important;
+    background: crimson !important;
 }
-/* contact section styling */
+
+/* CONTACT */
 .contact .title::after{
     content: "get in touch";
 }
@@ -562,33 +588,33 @@ section .title::after{
     border-color: #b3b3b3;
 }
 .contact .right form .textarea textarea{
-  padding-top: 10px;
-  resize: none;
+    padding-top: 10px;
+    resize: none;
 }
 .contact .right form .button-area{
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 .right form .button-area button{
-  color: #fff;
-  display: block;
-  width: 160px!important;
-  height: 45px;
-  outline: none;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  flex-wrap: nowrap;
-  background: crimson;
-  border: 2px solid crimson;
-  transition: all 0.3s ease;
+    color: #fff;
+    display: block;
+    width: 160px !important;
+    height: 45px;
+    outline: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    background: crimson;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
 }
 .right form .button-area button:hover{
-  color: crimson;
-  background: none;
+    color: crimson;
+    background: none;
 }
-/* footer section styling */
+
+/* FOOTER */
 footer{
     background: #111;
     padding: 15px 23px;
@@ -602,8 +628,7 @@ footer span a{
 footer span a:hover{
     text-decoration: underline;
 }
- 
-   .social a{
+.social a{
     font-size: 22px;
     width: 45px;
     height: 45px;
@@ -611,28 +636,25 @@ footer span a:hover{
     display: inline-block;
     border-radius: 50%;
     border: 2px solid #05ff05;
-    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 0px 1px rgba(255,255,255,0.4);
     margin: 10px;
     color: #fff;
     opacity: 0.7;
     transition: 0.3s ease-in-out;
-  }
-   .social a:hover{
+}
+.social a:hover{
     opacity: 0.9;
-    box-shadow: 0px 1px 3px 2px rgba(255, 255, 255, 0.9);
-  }
+    box-shadow: 0px 1px 3px 2px rgba(255,255,255,0.9);
+}
 
-
-
-/* responsive media query start */
-@media (max-width: 1104px) {
+/* RESPONSIVE */
+@media (max-width: 1104px){
     .about .about-content .left img{
         height: 350px;
         width: 350px;
     }
 }
-
-@media (max-width: 991px) {
+@media (max-width: 991px){
     .max-width{
         padding: 0 50px;
     }
@@ -667,30 +689,17 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
-    .home .home-content .text-2{
-        font-size: 70px;
-    }
-    .home .home-content .text-3{
-        font-size: 35px;
-    }
-    .home .home-content a{
-        font-size: 23px;
-        padding: 10px 30px;
-    }
-    .max-width{
-        max-width: 930px;
-    }
-    .about .about-content .column{
-        width: 100%;
-    }
+    .home .home-content .text-2{ font-size: 70px; }
+    .home .home-content .text-3{ font-size: 35px; }
+    .home .home-content a{ font-size: 23px; padding: 10px 30px; }
+    .max-width{ max-width: 930px; }
+    .about .about-content .column{ width: 100%; }
     .about .about-content .left{
         display: flex;
         justify-content: center;
         margin: 0 auto 60px;
     }
-    .about .about-content .right{
-        flex: 100%;
-    }
+    .about .about-content .right{ flex: 100%; }
     .services .serv-content .card{
         width: calc(50% - 10px);
         margin-bottom: 20px;
@@ -700,47 +709,28 @@ footer span a:hover{
         width: 100%;
         margin-bottom: 35px;
     }
+    .projects .carousel{ padding: 0 20px; }
+    .projects .carousel .card img{ height: 100px; width: 100px; }
+    .owl-nav button{ width: 30px !important; height: 30px !important; }
 }
-
-@media (max-width: 690px) {
-    .max-width{
-        padding: 0 23px;
-    }
-    .home .home-content .text-2{
-        font-size: 60px;
-    }
-    .home .home-content .text-3{
-        font-size: 32px;
-    }
-    .home .home-content a{
-        font-size: 20px;
-    }
-    .services .serv-content .card{
-        width: 100%;
-    }
+@media (max-width: 690px){
+    .max-width{ padding: 0 23px; }
+    .home .home-content .text-2{ font-size: 60px; }
+    .home .home-content .text-3{ font-size: 32px; }
+    .home .home-content a{ font-size: 20px; }
+    .services .serv-content .card{ width: 100%; }
+    .projects .carousel{ padding: 0 10px; }
+    .owl-nav{ display: none; }
 }
-
-@media (max-width: 500px) {
-    .home .home-content .text-2{
-        font-size: 50px;
-    }
-    .home .home-content .text-3{
-        font-size: 27px;
-    }
+@media (max-width: 500px){
+    .home .home-content .text-2{ font-size: 50px; }
+    .home .home-content .text-3{ font-size: 27px; }
     .about .about-content .right .text,
-    .skills .skills-content .left .text{
-        font-size: 19px;
-    }
-    .contact .right form .fields{
-        flex-direction: column;
-    }
+    .skills .skills-content .left .text{ font-size: 19px; }
+    .contact .right form .fields{ flex-direction: column; }
     .contact .right form .name,
-    .contact .right form .email{
-        margin: 0;
-    }
-    .right form .error-box{
-       width: 150px;
-    }
+    .contact .right form .email{ margin: 0; }
+    .right form .error-box{ width: 150px; }
     .scroll-up-btn{
         right: 15px;
         bottom: 15px;
@@ -750,24 +740,9 @@ footer span a:hover{
         line-height: 38px;
     }
 }
-@keyframes change {
-   
-    25%
-    {
-        background-image: url("2.jpg")
-    }
-    50%
-    {
-        background-image: url("3.jpg")
-    }
-    75%
-    {
-        background-image: url("4.jpg")
-    }
-    100%
-    {
-        background-image: url("5.jpg")
-    
-    }
-
+@keyframes change{
+    25%{ background-image: url("2.jpg"); }
+    50%{ background-image: url("3.jpg"); }
+    75%{ background-image: url("4.jpg"); }
+    100%{ background-image: url("5.jpg"); }
 }
